@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="main">
+      <button onclick="openWD()">Mở cửa sổ mới</button>
+      <button onclick="closeWD()">Đóng cửa sổ mới</button>
+      <button onclick="checkWD()">Kiểm tra cửa sổ mới đã đóng hay chưa</button>
+    </div>
+    <script>
+      var wd;
+      function openWD() {
+        var options;
+        var ua = navigator.userAgent;
+        if (ua.indexOf("Trident")) {
+          options = "menubar = yes, toolbar = yes, width =100, height = 100";
+        } else
+          options = "menubar = yes, toolbar = yes, width =150, height = 150";
+
+        wd = window.open("http://google.com", "tìm kiếm", options);
+      }
+
+      function closeWD() {
+        if (wd) {
+          wd.close();
+        }
+      }
+
+      function checkWD() {
+        if (wd.closed) {
+          alert("Cửa sổ đã được đóng");
+        } else alert("Cửa sổ đang hoạt động");
+      }
+    </script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
